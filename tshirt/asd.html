@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daddyspocket Studio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="ui/jquery-ui.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <link rel="Stylesheet" type="text/css" href="ui/jquery-ui.css" />
+    <link rel="Stylesheet" type="text/css" href="ui/jquery-ui.theme.css" />
+
+
+    <!-- wColorPicker -->
+    <link rel="Stylesheet" type="text/css" href="./lib/wColorPicker.min.css" />
+    <script type="text/javascript" src="./lib/wColorPicker.min.js"></script>
+
+    <link rel="Stylesheet" type="text/css" href="./wPaint.min.css" />
+    <script type="text/javascript" src="./wPaint.min.js"></script>
+
+
+
+    <script type="text/javascript" src="./plugins/main/wPaint.menu.main.min.js"></script>
+    <script type="text/javascript" src="./plugins/text/wPaint.menu.text.min.js"></script>
+    <script type="text/javascript" src="./plugins/shapes/wPaint.menu.main.shapes.min.js"></script>
+    <script type="text/javascript" src="./plugins/file/wPaint.menu.main.file.min.js"></script>
+
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+
+    <style>
+        .draggableu{
+            border: 1px solid orange;
+            max-height: 100%;
+            max-width: 100%;
+            min-height: 50px;
+            min-width: 50px;
+        }
+        #canvas
+        {
+            width: 400px;
+            height: 400px;
+          //  border: 2px solid orange;
+        }
+        #imgg
+        {
+            width: 400px;
+            height: 400px;
+       //     border: 2px solid blue;
+            position: absolute;left: 0px;
+            text-outline: 0px;
+        }
+        #canvaspaint
+        {
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+            z-index: 999;
+        }
+        .wPaint-menu-handle
+        {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+
+<div class="row" id="main">
+    <div class="col-md-1 col-xs-1"></div>
+    <div class="col-md-6 col-xs-5">
+
+        <div class="row" id="img-big">
+            <div class="col-md-2 col-xs-2">
+</div>
+            <!-- ###############################################################################TSHIRT DIV   -->
+            <div class="col-md-6 col-xs-6" id="canvas">
+                <div id="canvaspaint">
+
+                </div>
+               <div id="imgg">
+              <img class="img-responsive" src="images/tshirt-f.jpg" id="t-image">
+               </div>
+            </div>
+
+
+            <div class="col-md-4 col-xs-4">
+            </div>
+        </div>
+        <div class="row"></div>
+        <div class="row">
+            <div class="col-md-0 col-xs-0"></div>
+            <div class="col-md-2 col-xs-3" id="f1">
+
+
+                <a href="#" id="changef" rel="1"><img class="img-thumbnail" src="images/tshirt-f.jpg" /></a>
+
+            </div>
+            <div class="col-md-2 col-xs-3" id="b1">
+
+
+                <a href="#" id="changeb" rel="1"><img class="img-thumbnail" src="images/tshirt-b.jpg" /></a>
+
+            </div>
+            <div class="col-md-2 col-xs-3" id="s1">
+
+
+                <a href="#" id="changes1" rel="1"><img class="img-thumbnail" src="images/tshirt-s.jpg" /></a>
+
+            </div>
+            <div class="col-md-2 col-xs-3" id="s2">
+
+
+                <a href="#" id="changes2" rel="1"><img class="img-thumbnail" src="images/tshirt-ss.jpg" /></a>
+
+            </div>
+            <div class="col-md-2 col-xs-2"></div>
+            <div class="col-md-1 col-xs-0"></div><div class="col-md-1 col-xs-0"></div>
+        </div>
+    </div>
+    <div class="col-md-5 col-xs-5" style="width: 35.667%;" id="t-frame">
+
+        <div id="content">
+            <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                <li class="active"><a href="#edit" id="t1" data-toggle="tab"> Edit Product</a></li>
+                <li><a href="#addimage" data-toggle="tab"> Add Image</a></li>
+                <li><a href="#addtext" data-toggle="tab"> Add Text</a></li>
+                <li><a href="#save" data-toggle="tab"> Save</a></li>
+            </ul>
+            <div id="my-tab-content" class="tab-content">
+                <div class="tab-pane active" id="edit">
+                    <h1>Red</h1>
+                </div>
+                <div class="tab-pane" id="addimage">
+                    <br>
+                   <b>Upload Images</b><br><br>
+                    <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse&hellip; <input type="file" onchange="previewFile()" multiple>
+                    </span>
+                </span>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+
+<div><br><p style="font-size: 12px;color: rgba(128, 128, 128, 0.93);">We accept the following file types:<b>
+
+    JPG, GIF, PNG, BMP, TIF</b><br>
+    <br>
+   <b> 5.0 MB maximum file size</b>
+<br>
+    Files may take anywhere from a few seconds to a few minutes to upload.</p></div>
+                    <div class="checkbox">
+                    <label style="color: #898989"> <input type="checkbox" name="terms"><b> I agree to the terms and conditions for uploaded material</b> </label>
+                </div>
+                    <div class="form-group">
+                        <button style="width: 30%; height: 50px;" type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+                <div class="tab-pane" id="addtext" style="padding-bottom: 4%;">
+                    <br>
+                    <div class="form-group">
+                        <label for="addtext">Add Text</label>
+                        <textarea name="addtext" class="form-control"></textarea></div>
+                    <div class="form-group">
+                        <label for="cfont">Choose Font</label>
+                        <select name="cfont" class="form-control">
+                            <option>Select Font</option>
+                            <option>Arial</option>
+                            <option>Calibiri</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+
+                        <button style="width: 30%; height: 50px;" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+                <div class="tab-pane" id="save">
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-md-1 col-xs-1"></div>
+</div>
+<div class="row">
+    <div class="col-md-7"></div>
+    <div class="col-md-4" id="t-social" style="width: 35.667%">
+
+        <div class="text-center center-block">
+            <div class="social">
+            <a href="#" class="[ social-icon facebook ] animate"><span class="fa fa-facebook"></span></a>
+
+            <a href="#" class="[ social-icon twitter ] animate"><span class="fa fa-twitter"></span></a>
+
+
+            <a href="#" class="[ social-icon google-plus ] animate"><span class="fa fa-google-plus"></span></a>
+
+            <a href="#" class="[ social-icon linkedin ] animate"><span class="fa fa-linkedin"></span></a></div>
+        </div>
+    </div>
+    <div class="col-md-1 col-xs-1"></div>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $('#tabs').tab();
+    });
+
+
+    $(document).ready(function(){
+        $('#changef').click(function(){
+            var rel = $(this).attr('rel');
+            $("#imgg").html("<img src='images/tshirt-f.jpg' class='img-reponsive' id='t-image' />");
+        })
+    });
+    $(document).ready(function(){
+        $('#changeb').click(function(){
+            var rel = $(this).attr('rel');
+            $("#imgg").html("<img src='images/tshirt-b.jpg' class='img-reponsive' id='t-image'/>");
+        })
+    });
+    $(document).ready(function(){
+        $('#changes1').click(function(){
+            var rel = $(this).attr('rel');
+            $("#imgg").html("<img src='images/tshirt-s.jpg' class='img-reponsive' id='t-image' />");
+        })
+    });
+    $(document).ready(function(){
+        $('#changes2').click(function(){
+            var rel = $(this).attr('rel');
+            $("#imgg").html("<img src='images/tshirt-ss.jpg' class='img-reponsive' id='t-image' />");
+        })
+    });
+
+    $("#canvaspaint").wPaint({
+        theme: 'standard classic',
+        menuOrientation: 'horizontal'
+    });
+    $(".wPaint-menu").css({"position":"fixed","top":"340px","left":"70px"});
+
+
+    function previewFile(){
+        //oru puthiya div undakkuka
+        var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+        var reader  = new FileReader();
+
+        reader.onloadend = function () {
+            alert(reader.result); //#######ee reader.result il aanu base64 data... :-O
+          $("#canvaspaint").append("<div class='draggableu'> <img style='width: 100%; height: 100%;' src=\""+reader.result+"\"/></div>");
+            $(".draggableu").draggable({
+               containment: "parent"
+            }).resizable();
+        }
+
+        if (file) {
+            reader.readAsDataURL(file); //reads the data as a URL
+        } else {
+            preview.src = "";
+        }
+    }
+
+</script>
+</html>

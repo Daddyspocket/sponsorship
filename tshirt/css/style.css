@@ -1,0 +1,114 @@
+.t-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#t-frame
+{
+    border: #D8D8D8 1px solid;
+    border-radius: 10px;
+    padding-bottom: 9%;
+}
+#t-social
+{
+    border: #D8D8D8 1px solid;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    background-color: #F7F7F7;
+    padding: 1%;
+}
+#f1,#b1,#s1,#s2
+{
+    padding: 1%;
+    margin-left: 2%;
+}
+#main
+{
+    padding-top: 10%;
+}
+#t1{
+    border-left:   transparent 1px solid !important;
+
+}
+#t2{
+    border-right:   transparent 1px solid !important;
+    border-bottom:   transparent 1px solid !important;
+}
+.nav-tabs li.active a
+{
+    border-top:   transparent 1px solid !important;
+    border-radius: 0px !important;
+}
+.glyphicon
+{
+    font-size: 32px;
+    text-align: center;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+a.social-icon {
+    text-decoration: none !important;
+    box-shadow: 0px 0px 1px rgb(51, 51, 51);
+    box-shadow: 0px 0px 1px rgba(51, 51, 51, 0.7);
+}
+a.social-icon:hover {
+    color: rgb(255, 255, 255) !important;
+}
+a.facebook {
+    color: rgb(59, 90, 154) !important;
+}
+a.facebook:hover {
+    background-color: rgb(59, 90, 154) !important;
+}
+a.twitter {
+    color: rgb(45, 168, 225) !important;
+}
+a.twitter:hover {
+    background-color: rgb(45, 168, 225) !important;
+}
+a.github {
+    color: rgb(51, 51, 51) !important;
+}
+a.github:hover {
+    background-color: rgb(51, 51, 51) !important;
+}
+a.google-plus {
+    color: rgb(244, 94, 75) !important;
+}
+a.google-plus:hover {
+    background-color: rgb(244, 94, 75) !important;
+}
+a.linkedin {
+    color: rgb(1, 116, 179) !important;
+}
+a.linkedin:hover {
+    background-color: rgb(1, 116, 179) !important;
+}
+.social a {
+    position: relative;
+    display: inline-block;
+    min-width: 40px;
+    padding: 10px 0px;
+    margin: 0px 5px;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgb(215, 215, 215);
+    border-radius: 40px;
+}
